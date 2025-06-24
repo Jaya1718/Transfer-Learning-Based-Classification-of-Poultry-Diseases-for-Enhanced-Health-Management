@@ -10,7 +10,7 @@ __pycache__/
 .venv/
 
 # === Model Files ===
-
+*.h5
 *.hdf5
 *.ckpt
 *.pb
