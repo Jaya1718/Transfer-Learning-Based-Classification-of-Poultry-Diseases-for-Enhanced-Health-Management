@@ -110,6 +110,15 @@
       color: #1abc9c;
     }
 
+    .success-message {
+      background-color: #1abc9c;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -132,15 +141,21 @@
 
   <div class="container">
     <h2>Contact Us</h2>
-    <form>
+
+    <!-- ✅ Success Message -->
+    {% if success %}
+      <div class="success-message">✅ Message sent successfully!</div>
+    {% endif %}
+
+    <form method="POST">
       <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Your Name">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Your Email">
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
 
       <label for="message">Message:</label>
-      <textarea id="message" placeholder="Your Message"></textarea>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
 
       <button type="submit" class="btn">Send Message</button>
     </form>
